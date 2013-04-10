@@ -105,7 +105,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 [INFO] Final Memory: 13M/33M
 [INFO] ------------------------------------------------------------------------
 ```
-6.  Install robocode-pmj-dacruzer into Eclipse
+6.  Install jsoup-forumCrawler into Eclipse
 ----------------------------------------------
 
 Now that the system is running from the command line, you'll want to also run it from Eclipse.  To do so, bring up Eclipse, and select File | Import | Maven | Existing Maven Projects, and then complete the dialog boxes to import your project.  Eclipse will read the POM file in order to determine the libraries to include on the build path.  
