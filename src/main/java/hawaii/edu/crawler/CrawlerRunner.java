@@ -33,10 +33,12 @@ public class CrawlerRunner {
       while ((lineFromFile = reader.readLine()) != null) {
         // Grab the thread title.
         data.setThreadTitle(lineFromFile.split("&&&")[0]
-            .replaceAll("[-+.^:,\"~`/;!@*#$%&()?]"," ").replace("'", ""));
+            .replaceAll("[+.^:,\"~`/;!@*#$%&()?]"," ")
+            .replace("'", ""));
         // Grab the first post content.
         data.setPostContent(lineFromFile.split("&&&")[1]
-            .replaceAll("[-+.^:,\"~`;/!@*#$%&()?]"," ").replace("'", ""));
+            .replaceAll("[+.^:,\"~`;/!@*#$%&()?]"," ")
+            .replace("'", ""));
         // Grab the amount of replies that the read has.
         data.setReplies(lineFromFile.split("&&&")[2]);
         //System.out.println(data.getThreadTitle());
@@ -62,16 +64,16 @@ public class CrawlerRunner {
   */
   public static void main(String[] args) {
     Dictionary dic = new Dictionary();
-    dic.fillEntries("subjclueslen1-HLTEMNLP05.tff");
+    dic.fillEntries("dictionary.txt");
     //TropixCrawler tropix = new TropixCrawler();
     //tropix.run(2000, "tropixTitleData3.txt");
     CrawlerRunner runner = new CrawlerRunner();
-    runner.fillPostData("tropixData.txt");
+    runner.fillPostData("testParser.txt");
     if (runner.getPostData().isEmpty()) {
       System.out.println("There is no post data to be parsed!");
     }
     else {
-      dic.parse(runner.getPostData(), 1, "output2.txt");
+      dic.parse(runner.getPostData(), 1, "output5.txt");
     }
   }  
 }
