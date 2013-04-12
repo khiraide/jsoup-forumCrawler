@@ -29,7 +29,7 @@ ToDo
 A typical output from one of these commands might be:
 
 ```
-[~/robocode/libs]-> mvn install:install-file -Dfile=jsoup.jar -DartifactId=jsoup -DgroupId=net.sourceforge.jsoup -Dversion=1.7.4.4 -Dpackaging=jar -DgeneratePom=true
+[~/jsoup/libs]-> mvn install:install-file -Dfile=jsoup.jar -DartifactId=jsoup -DgroupId=net.sourceforge.jsoup -Dversion=1.7.4.4 -Dpackaging=jar -DgeneratePom=true
 [INFO] Scanning for projects...
 [INFO]                                                                         
 [INFO] ------------------------------------------------------------------------
@@ -37,7 +37,7 @@ A typical output from one of these commands might be:
 [INFO] ------------------------------------------------------------------------
 [INFO] 
 [INFO] --- maven-install-plugin:2.3.1:install-file (default-cli) @ standalone-pom ---
-[INFO] Installing /Users/keone/jsoup/libs/robocode.jar to /Users/keone/.m2/repository/net/sourceforge/jsoup/jsoup/jsoup.jar
+[INFO] Installing /Users/keone/jsoup/libs/jsoup.jar to /Users/keone/.m2/repository/net/sourceforge/jsoup/jsoup/jsoup.jar
 [INFO] Installing /var/folders/__/qq1ydtj56n3fxtccjh9k6dk80000gn/T/mvninstall1027288217865601684.pom to /Users/keone/.m2/repository/net/sourceforge/jsoup.pom
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
@@ -46,7 +46,7 @@ A typical output from one of these commands might be:
 [INFO] Finished at: Mon Jan 28 14:28:31 HST 2013
 [INFO] Final Memory: 7M/309M
 [INFO] ------------------------------------------------------------------------
-[~/robocode/libs]-> 
+[~/jsoup/libs]-> 
 ```
 5.  Build and test the system
 -----------------------------
