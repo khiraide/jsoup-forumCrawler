@@ -1,0 +1,76 @@
+Topix top 100 posts
+455 Unique / 732 Total
+1	obama	17
+2	president	6
+3	barack	6
+4	gay	5
+5	marriage	5
+6	gun	5
+7	obamas	5
+8	party	5
+9	debate	5
+10	shooting	5
+
+USMessage
+534 Unique / 782 Total
+1	gun	11
+2	year	5
+3	after	4
+4	pay	4
+5	15	3
+6	family	3
+7	obama	3
+8	people	3
+9	police	3
+10	shooting	3
+
+Liberty
+464 Unique / 680 Total
+1	obama	13
+2	thread	4
+3	school	4
+4	america	3
+5	obamas	3
+6	warming	3
+7	president	3
+8	news	3
+9	minimum	3
+10	gay	3
+---------------------------------
+Topix zero replies
+4497 Unique / 12717 Total
+1	obama	77
+2	call	71
+3	bill	62
+4	immigration	55
+5	gun	48
+6	08103726953	47
+7	state	43
+8	marriage	43
+9	court	41
+10	house	38
+
+USMessage
+2454 Unique / 4904 Total
+1	obama	20
+2	year	14
+3	video	13
+4	government	13
+5	school	12
+6	gun	12
+7	anti	11
+8	war	11
+9	america	10
+10	liberal	10
+
+Liberty
+1	obama	61
+2	10	21
+3	facts	18
+4	government	16
+5	quote	16
+6	daily	14
+7	gun	13
+8	romney	12
+9	state	8
+10	obamacare	8

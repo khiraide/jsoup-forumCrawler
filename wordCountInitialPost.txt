@@ -1,0 +1,79 @@
+topix top 100 initial posts
+1694 unique / 5273 total
+1) people	27
+2) obama	19	
+3) health	14
+4) time	12	unknown
+5) god	9
+6) country	9
+7) world	9
+8) care	9	positive
+9) government	8
+10) American	8
+
+usMessage top 100 initial posts
+3569 Unique / 13,918 Total
+1) gun	51
+2) people	45
+3) year	36
+4) house	32
+5) state	31
+6) news	27
+7) police	23
+8) states	23
+9) women	23
+10) white	23
+
+liberty top 100 initial posts
+3811 unique / 15,064 total
+1) obama	63
+2) http	56
+3) god	41
+4) said	37
+5) www	35
+6) percent	32
+7) president	29
+8) people	25
+9) years	25
+10) 2012	23
+
+-------------------------
+
+topix zero inital posts
+11,576 Unique / 88,507 Total
+1) people	234
+2) judge	186
+3) solutions	161
+4) manual	159
+5) buy	151
+6) against	146	negative
+7) police	141	unknown
+8) drager	140	unknown
+9) state	135	unknown
+10) obama	
+
+usMessage zero initial posts
+14,217 Unique / 112,823 Total
+1) people	281	unknown
+2) time	174	unknown
+3) government	169
+4) year	164
+5) com	149	unknown
+6) youtube	144
+7) obama	136
+8) president	129
+9) police	128
+10) world	112
+
+liberty zero initial 
+10,710 Unique / 75,010 Total
+1) http	396	unknown
+2) obama	252 unknown
+3) com	316
+4) people	178 unknown
+5) 2012	149	unknown
+6) government 148	unknown
+7) state	135	unknown
+8) president	135	unknown
+9) news	109	unknown
+10) american	105 unknown
