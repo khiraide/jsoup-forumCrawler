@@ -8,7 +8,7 @@ package hawaii.edu.crawler;
 public class DicEntry {
   
   /**
-   * The polarity of word can either be positive or negative.
+   * The polarity of word can either be positive, negative, or neutral.
    */
   private String polarity;
   
@@ -19,7 +19,7 @@ public class DicEntry {
   
   /**
    * Set the polarity of the word.
-   * @param polarity Will either be "positive" or "negative".
+   * @param polarity Will either be "positive", "negative", or "neutral".
    */
   public void setPolarity(String polarity) {
     this.polarity = polarity;

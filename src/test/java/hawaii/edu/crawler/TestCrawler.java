@@ -9,7 +9,7 @@ import org.junit.runners.JUnit4;
 //import static org.junit.Assert.assertEquals;
 
 /**
- * Test class for {@link CrawlerRunner} class for web crawling. 
+ * Test class for {@link Runner} class for web crawling. 
  * @author Keone Hiraide
  */
 

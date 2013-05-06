@@ -9,6 +9,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 
 /**
@@ -55,7 +57,52 @@ public class Dictionary {
   }
   
   /**
-   * Parses a sentence and returns data containing results of our parsing.
+   * Add a word to this hashmap. If it's not in the hashmap add it. If it is in the hashmap, increase
+   * its count by one.
+   * @param hashMap Hashmap that stores all your unique words.
+   * @param word The word you want to check with your hashmap.
+   */
+  public void checkUnique(Map<String, Integer> hashMap, String word) {
+    if (hashMap.get(word.trim().toLowerCase()) != null) {
+      int newVal = hashMap.get(word.trim().toLowerCase());
+      hashMap.put(word.trim().toLowerCase(), newVal + 1);
+    }
+    else {
+      hashMap.put(word.trim().toLowerCase(), 1);
+    }
+  }
+
+  /**
+   * Prints the contents of the hashMap with its value to a file.
+   * @param hashMap 
+   * @param filename The name of your output file.
+   */
+  public void printUnique(Map<String, Integer> hashMap, String filename) {
+    Path newFile = Paths.get(filename);
+    BufferedWriter writer;
+    try {
+      writer = Files.newBufferedWriter(newFile, Charset.defaultCharset());
+      int i = 1;
+      for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
+        if (entry.getValue() >= 5) {
+          writer.append(i + "\t" + entry.getKey() + "\t" + entry.getValue());
+          writer.newLine();
+          i++;
+        }
+        
+      }
+      writer.close();
+    }
+    catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    
+  }
+  
+  
+  /**
+   * Parses a sentence and outputs results of our parsing to a text file..
    * 
    * @param postData Data to be parsed.
    * @param filename Name of the output file containing our results of the parse.
@@ -63,6 +110,14 @@ public class Dictionary {
    * initial post content. 
    */
   public void parse(List<PostData> postData, int parseFlag, String filename) {
+    /*
+     * Map holding a list of words and the frequency count.
+     */
+    Map<String, Integer> positiveCount = new HashMap<String, Integer>();
+    Map<String, Integer> negativeCount = new HashMap<String, Integer>();
+    Map<String, Integer> neutralCount = new HashMap<String, Integer>();
+    Map<String, Integer> unknownCount = new HashMap<String, Integer>();
+    
     if (!postData.isEmpty()) {
       for (PostData d : postData) {
         int positive = 0; 
@@ -83,20 +138,24 @@ public class Dictionary {
             for (int i = 0; i < this.entries.size(); i++) {
               if (s.trim().equalsIgnoreCase(this.entries.get(i).getWord())) {
                 if (this.entries.get(i).getPolarity().equals("positive")) {
+                  checkUnique(positiveCount, s);
                   positive++;
                   break;
                 }
                 else if (this.entries.get(i).getPolarity().equals("negative")) {
+                  checkUnique(negativeCount, s);
                   negative++;
                   break;
                 }
                 else if (this.entries.get(i).getPolarity().equals("neutral")) {
+                  checkUnique(neutralCount, s);
                   neutral++;
                   break;
                 }
               } 
               else if (i >= this.entries.size() - 1 &&
                   !s.trim().isEmpty()) {
+                checkUnique(unknownCount, s);
                 unknown++;
               }
             }
@@ -110,18 +169,30 @@ public class Dictionary {
       
       // Writing out results to an output file.
       try {
+        // Writing sentence parsing results to a file.
         Path newFile = Paths.get(filename);
         BufferedWriter writer = Files.newBufferedWriter(newFile, Charset.defaultCharset());
         int i = 1;
         for (PostData d : postData) {
           writer.append(i + "\t" + d.getReplies() + "\t" + 
           d.getPositive() + "\t" + d.getNegative() + "\t" + 
-          d.getNeutral() + "\t" + d.getUnknown());
+          d.getNeutral() + "\t" + d.getUnknown() + "\t");
+          if (parseFlag == 0) {
+            writer.append(d.getThreadTitle().toLowerCase());
+          }
+          else if (parseFlag == 1) {
+            writer.append(d.getPostContent().toLowerCase());
+          }
           writer.newLine();
           i++;
         }
         writer.close();
+        printUnique(positiveCount, "positiveCount.txt");
+        printUnique(negativeCount, "negativeCount.txt");
+        printUnique(neutralCount, "neutralCount.txt");
+        printUnique(unknownCount, "unknownCount.txt");
       }
+      
       catch (IOException e) {
         e.printStackTrace();
       }
